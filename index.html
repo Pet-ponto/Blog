@@ -3,175 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Ponto | O Guia Definitivo de Achadinhos, Cuidados e Pets</title>
+    <title>Pet Ponto | O Portal Definitivo de Achadinhos e Cuidados Pet</title>
     <!-- Script do Google AdSense Integrado -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6449496146815661" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .tab-active { background-color: #0F766E; color: white; border-color: #0F766E; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .tab-active { background-color: #0d9488; color: white; box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-slate-50/70 text-slate-800">
 
     <!-- Cabeçalho Fixo -->
-    <header class="bg-white/95 backdrop-blur border-b border-slate-200 sticky top-0 z-40 shadow-xs">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold text-teal-800 tracking-tight flex items-center gap-1.5">
-                <span>🐾</span> Pet<span class="text-orange-500">Ponto</span>
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3.5 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-teal-800 tracking-tight flex items-center gap-2">
+                <span class="bg-teal-100 text-teal-800 p-1.5 rounded-xl text-xl">🐾</span> Pet<span class="text-orange-500">Ponto</span>
             </a>
-            <nav class="hidden md:flex space-x-6 font-medium text-sm text-slate-600">
-                <a href="#painel" class="hover:text-teal-700 transition">Painel Rápido</a>
+            <nav class="hidden md:flex space-x-7 font-semibold text-sm text-slate-600">
+                <a href="#painel" class="hover:text-teal-700 transition">Painel</a>
                 <a href="#vitrine" class="hover:text-teal-700 transition">Achadinhos</a>
-                <a href="#cuidados" class="hover:text-teal-700 transition">Cuidados & Exóticos</a>
-                <a href="#tendencias" class="hover:text-teal-700 transition">Vacinas & Ciência</a>
+                <a href="#cuidados" class="hover:text-teal-700 transition">Cuidados & Saúde</a>
+                <a href="#tendencias" class="hover:text-teal-700 transition">Inovação & Ciência</a>
             </nav>
-            <a href="#vitrine" class="bg-orange-500 hover:bg-orange-600 text-white text-xs md:text-sm font-bold px-4 py-2 rounded-full transition shadow-sm">
-                🔥 Ofertas ML
+            <a href="#vitrine" class="bg-orange-500 hover:bg-orange-600 text-white text-xs md:text-sm font-bold px-4.5 py-2.5 rounded-xl transition shadow-sm shadow-orange-500/20">
+                🔥 Ofertas Mercado Livre
             </a>
         </div>
     </header>
 
     <!-- Banner Principal -->
-    <section class="bg-gradient-to-br from-teal-900 via-teal-800 to-slate-900 text-white py-10 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <span class="bg-teal-700/60 border border-teal-500/30 text-teal-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                Curadoria Independente & Científica
+    <section class="bg-gradient-to-br from-teal-950 via-teal-900 to-slate-900 text-white py-14 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="inline-block bg-teal-800/80 border border-teal-600/40 text-teal-200 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-4">
+                ✨ Curadoria Independente & Bem-Estar Animal
             </span>
-            <h1 class="text-3xl md:text-5xl font-extrabold mt-3 mb-3 leading-tight">
-                Tudo o que o seu pet precisa em um só ponto.
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+                Tudo o que o seu pet precisa, <br class="hidden md:block"><span class="text-teal-400">em um só ponto.</span>
             </h1>
-            <p class="text-teal-100 text-sm md:text-base mb-6 max-w-2xl mx-auto">
-                Achadinhos testados em vídeo, guias especializados para cães, gatos, pets exóticos e as últimas novidades em saúde veterinária.
+            <p class="text-slate-300 text-sm md:text-base mb-8 max-w-2xl mx-auto leading-relaxed">
+                Produtos virais testados em vídeo, análises técnicas de rotina e guias especializados para tutores exigentes.
             </p>
-            <div class="max-w-md mx-auto relative">
-                <input type="text" id="buscaInput" onkeyup="filtrarProdutos()" placeholder="O que procura? (ex: moletom, ração, coelho, vacina...)" 
-                    class="w-full px-5 py-3.5 rounded-full text-slate-800 text-sm focus:outline-none focus:ring-4 focus:ring-orange-500/40 shadow-lg">
+            <div class="max-w-xl mx-auto relative shadow-2xl rounded-full">
+                <input type="text" id="buscaInput" onkeyup="filtrarProdutos()" placeholder="Pesquisar produto, rotina, saúde, dispenser..." 
+                    class="w-full px-6 py-4 rounded-full text-slate-800 text-sm md:text-base focus:outline-none focus:ring-4 focus:ring-orange-500/30 bg-white/95 backdrop-blur">
             </div>
         </div>
     </section>
 
-    <!-- PAINEL DE CONTROLE RÁPIDO (Acesso Imediato) -->
-    <nav id="painel" class="max-w-6xl mx-auto px-4 -mt-5 relative z-20">
-        <div class="bg-white rounded-2xl shadow-md border border-slate-200/80 p-4 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-            <a href="#vitrine" class="p-3 rounded-xl hover:bg-teal-50 transition border border-slate-100 flex flex-col items-center">
-                <span class="text-2xl mb-1">⚡</span>
+    <!-- PAINEL DE COMANDO RÁPIDO -->
+    <nav id="painel" class="max-w-6xl mx-auto px-4 -mt-6 relative z-30">
+        <div class="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-200/80 p-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
+            <a href="#vitrine" class="group p-4 rounded-xl hover:bg-teal-50/70 transition border border-slate-100 flex flex-col items-center">
+                <span class="text-2xl mb-1.5 group-hover:scale-110 transition">⚡</span>
                 <span class="text-xs font-bold text-slate-800">Achadinhos</span>
                 <span class="text-[10px] text-slate-500">Vídeos & Ofertas</span>
             </a>
-            <a href="#cuidados" class="p-3 rounded-xl hover:bg-teal-50 transition border border-slate-100 flex flex-col items-center">
-                <span class="text-2xl mb-1">🐶🐱</span>
-                <span class="text-xs font-bold text-slate-800">Rotina & Cuidado</span>
-                <span class="text-[10px] text-slate-500">Cães e Gatos</span>
+            <a href="#cuidados" class="group p-4 rounded-xl hover:bg-teal-50/70 transition border border-slate-100 flex flex-col items-center">
+                <span class="text-2xl mb-1.5 group-hover:scale-110 transition">🐶🐱</span>
+                <span class="text-xs font-bold text-slate-800">Rotina Cães & Gatos</span>
+                <span class="text-[10px] text-slate-500">Cuidados Diários</span>
             </a>
-            <a href="#exoticos" class="p-3 rounded-xl hover:bg-teal-50 transition border border-slate-100 flex flex-col items-center">
-                <span class="text-2xl mb-1">🦜🐇</span>
-                <span class="text-xs font-bold text-slate-800">Pets Exóticos</span>
-                <span class="text-[10px] text-slate-500">Coelhos & Aves</span>
+            <a href="#especiais" class="group p-4 rounded-xl hover:bg-teal-50/70 transition border border-slate-100 flex flex-col items-center">
+                <span class="text-2xl mb-1.5 group-hover:scale-110 transition">🐰🐹</span>
+                <span class="text-xs font-bold text-slate-800">Pequenos Mamíferos</span>
+                <span class="text-[10px] text-slate-500">Coelhos e Roedores</span>
             </a>
-            <a href="#tendencias" class="p-3 rounded-xl hover:bg-teal-50 transition border border-slate-100 flex flex-col items-center">
-                <span class="text-2xl mb-1">🔬</span>
-                <span class="text-xs font-bold text-slate-800">Ciência & Vacinas</span>
-                <span class="text-[10px] text-slate-500">Estudos e Lançamentos</span>
+            <a href="#tendencias" class="group p-4 rounded-xl hover:bg-teal-50/70 transition border border-slate-100 flex flex-col items-center">
+                <span class="text-2xl mb-1.5 group-hover:scale-110 transition">🔬</span>
+                <span class="text-xs font-bold text-slate-800">Ciência Veterinária</span>
+                <span class="text-[10px] text-slate-500">Estudos & Vacinas</span>
             </a>
         </div>
     </nav>
 
     <!-- ÁREA DE ANÚNCIO 1: Topo -->
     <div class="max-w-6xl mx-auto px-4 mt-8">
-        <div class="bg-slate-200/70 border border-dashed border-slate-300 rounded-xl p-3 text-center text-xs text-slate-400">
-            [ Espaço Publicitário - Anúncio Google AdSense ]
+        <div class="bg-slate-200/60 border border-dashed border-slate-300 rounded-xl p-3 text-center text-xs text-slate-400">
+            [ Espaço Publicitário - Google AdSense ]
         </div>
     </div>
 
-    <!-- SEÇÃO 1: Vitrine Rápida de Afiliados -->
-    <section id="vitrine" class="max-w-6xl mx-auto px-4 py-8">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+    <!-- SEÇÃO 1: Vitrine de Achadinhos -->
+    <section id="vitrine" class="max-w-6xl mx-auto px-4 py-10">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
             <div>
-                <h2 class="text-2xl font-bold text-slate-900">⚡ Achadinhos em Destaque</h2>
-                <p class="text-sm text-slate-500">Produtos testados e aprovados nos nossos Shorts:</p>
+                <span class="text-xs font-bold text-teal-700 tracking-wider uppercase">Vitrine de Afiliados</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Achadinhos em Destaque</h2>
             </div>
             <div class="flex flex-wrap gap-2 text-xs font-semibold">
-                <button onclick="filtrarCategoria('todos', this)" class="tab-btn tab-active px-4 py-2 rounded-full border border-slate-200 transition">Todos</button>
-                <button onclick="filtrarCategoria('Alimentação', this)" class="tab-btn bg-white text-slate-600 px-4 py-2 rounded-full border border-slate-200 transition">Alimentação</button>
-                <button onclick="filtrarCategoria('Higiene', this)" class="tab-btn bg-white text-slate-600 px-4 py-2 rounded-full border border-slate-200 transition">Higiene</button>
-                <button onclick="filtrarCategoria('Conforto', this)" class="tab-btn bg-white text-slate-600 px-4 py-2 rounded-full border border-slate-200 transition">Conforto</button>
+                <button onclick="filtrarCategoria('todos', this)" class="tab-btn tab-active px-4 py-2.5 rounded-full border border-slate-200 transition">Todos</button>
+                <button onclick="filtrarCategoria('Alimentação', this)" class="tab-btn bg-white text-slate-600 hover:bg-slate-100 px-4 py-2.5 rounded-full border border-slate-200 transition">Alimentação</button>
+                <button onclick="filtrarCategoria('Higiene', this)" class="tab-btn bg-white text-slate-600 hover:bg-slate-100 px-4 py-2.5 rounded-full border border-slate-200 transition">Higiene</button>
+                <button onclick="filtrarCategoria('Conforto', this)" class="tab-btn bg-white text-slate-600 hover:bg-slate-100 px-4 py-2.5 rounded-full border border-slate-200 transition">Conforto</button>
             </div>
         </div>
 
         <div id="gradeProdutos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </section>
 
-    <!-- SEÇÃO 2: Conteúdos, Cuidados e Pets Exóticos -->
+    <!-- SEÇÃO 2: Conteúdos e Guias Especializados -->
     <main id="cuidados" class="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        <!-- Coluna Principal de Artigos (2/3) -->
+        <!-- Coluna de Artigos (2/3) -->
         <div class="lg:col-span-2 space-y-8">
             
-            <!-- Bloco 1: Cuidados do Dia a Dia (Cães e Gatos) -->
+            <!-- Artigo 1: Rotina Cães e Gatos (Com Subtópicos Nítidos) -->
             <article class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200/80">
-                <span class="bg-teal-100 text-teal-800 text-xs font-bold px-2.5 py-1 rounded uppercase">Rotina Pet</span>
-                <h2 class="text-2xl font-extrabold text-slate-900 mt-2 mb-3">Guia Essencial: Cuidados Diários com Cães e Gatos</h2>
-                <p class="text-slate-600 text-sm mb-4 leading-relaxed">
-                    Manter a rotina equilibrada evita problemas comportamentais e garante longevidade. Descubra as melhores práticas de escovação, hidratação e enriquecimento ambiental.
-                </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-700">
-                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                        <strong class="text-teal-800 block mb-1">💧 Hidratação Ativa</strong>
-                        Gatos preferem água corrente. Fontes automáticas aumentam o consumo diário em até 40%, prevenindo cálculos renais.
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-teal-100 text-teal-800 text-[11px] font-bold px-2.5 py-1 rounded-md uppercase">Rotina & Bem-Estar</span>
+                    <span class="text-slate-400 text-xs">• Análise Técnica</span>
+                </div>
+                <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-4">Estratégias de Rotina para Cães e Gatos</h2>
+                
+                <div class="space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">1. Prevenção de Doenças Renais em Felinos</h3>
+                        <p>Gatos possuem baixa propensão natural a beber água parada devido à sua descendência desértica. O uso de fontes elétricas com circulação contínua e recipientes largos de cerâmica evita o chamado "estresse de bigode" e aumenta a ingestão diária de líquidos, reduzindo drasticamente o risco de cristais urinários.</p>
                     </div>
-                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                        <strong class="text-teal-800 block mb-1">🐾 Higiene de Patas</strong>
-                        O uso de jornais absorventes específicos (como o All Papers Pet) protege o piso e evita o contacto com tintas tóxicas de jornais de banca.
+                    <div class="border-t pt-4">
+                        <h3 class="font-bold text-slate-900 text-base mb-1">2. Enriquecimento Ambiental Canino</h3>
+                        <p>Cães que passam muito tempo sozinhos desenvolvem ansiedade de separação. A utilização de dispensers interativos de ração e comedouros lentos estimula o instinto de caça e forragem, gastando energia mental e prevenindo a destruição de móveis em casa.</p>
+                    </div>
+                    <div class="border-t pt-4">
+                        <h3 class="font-bold text-slate-900 text-base mb-1">3. Higiene Doméstica e Pisos Seguros</h3>
+                        <p>O hábito de utilizar jornais tradicionais de papel com tinta gráfica comum traz riscos pelo contacto contínuo com resíduos de chumbo e solventes. A transição para tapetes absorventes de celulose virgem garante patas limpas e absorção imediata sem odor.</p>
                     </div>
                 </div>
             </article>
 
-            <!-- Bloco 2: Pets Exóticos (Coelhos, Pássaros e Tartarugas) -->
-            <article id="exoticos" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200/80">
-                <span class="bg-orange-100 text-orange-800 text-xs font-bold px-2.5 py-1 rounded uppercase">Pets Não Convencionais</span>
-                <h2 class="text-2xl font-extrabold text-slate-900 mt-2 mb-3">Guia de Cuidados Especiais: Coelhos, Pássaros e Tartarugas</h2>
-                <p class="text-slate-600 text-sm mb-4 leading-relaxed">
-                    Animais fora do cotidiano exigem atenção redobrada com o habitat, temperatura e alimentação específica para evitar doenças graves.
-                </p>
-                <div class="space-y-3 text-xs md:text-sm text-slate-600">
-                    <div class="p-3.5 bg-amber-50/50 rounded-xl border border-amber-100">
-                        🐰 <strong>Coelhos:</strong> Precisam de feno à vontade para desgaste dental e digestão. Nunca alimente apenas com ração comercial seca.
+            <!-- Artigo 2: Pequenos Mamíferos (Subtópico Direto e Original) -->
+            <article id="especiais" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200/80">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-orange-100 text-orange-800 text-[11px] font-bold px-2.5 py-1 rounded-md uppercase">Pequenos Mamíferos</span>
+                    <span class="text-slate-400 text-xs">• Guia de Manejo</span>
+                </div>
+                <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-4">Manejo Nutricional e Comportamental de Coelhos e Roedores</h2>
+                
+                <div class="space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">O Papel Vital do Feno de Capim</h3>
+                        <p>Diferente de cães e gatos, coelhos e porquinhos-da-índia possuem dentes de crescimento contínuo. O feno limpo e fibroso não é apenas um alimento, mas a ferramenta mecânica essencial para o desgaste correto dos molares e regulação da flora intestinal.</p>
                     </div>
-                    <div class="p-3.5 bg-sky-50/50 rounded-xl border border-sky-100">
-                        🐦 <strong>Pássaros:</strong> Exigem banhos de sol matinais controlados para síntese de vitamina D e viveiros espaçosos livres de correntes de ar.
-                    </div>
-                    <div class="p-3.5 bg-emerald-50/50 rounded-xl border border-emerald-100">
-                        🐢 <strong>Tartarugas:</strong> Necessitam de lâmpadas UVB específicas e água limpa com controle estrito de temperatura para o casco crescer forte.
+                    <div class="border-t pt-4">
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Controle Térmico e Ventilação</h3>
+                        <p>Espécies de pequeno porte são extremamente sensíveis a temperaturas superiores a 28°C e correntes de ar diretas. O posicionamento do habitat exige ambientes arejados, longe da incidência solar direta para evitar choques térmicos e insolação.</p>
                     </div>
                 </div>
             </article>
 
             <!-- ÁREA DE ANÚNCIO 2: Meio do Conteúdo -->
             <div class="my-4">
-                <div class="bg-slate-200/70 border border-dashed border-slate-300 rounded-xl p-3 text-center text-xs text-slate-400">
-                    [ Espaço Publicitário - Anúncio Google AdSense ]
+                <div class="bg-slate-200/60 border border-dashed border-slate-300 rounded-xl p-3 text-center text-xs text-slate-400">
+                    [ Espaço Publicitário - Google AdSense ]
                 </div>
             </div>
 
-            <!-- Bloco 3: Ciência, Estudos e Lançamentos de Vacinas -->
+            <!-- Artigo 3: Ciência e Vacinas (Foco Original) -->
             <article id="tendencias" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200/80">
-                <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded uppercase">Inovação Veterinária</span>
-                <h2 class="text-2xl font-extrabold text-slate-900 mt-2 mb-3">Tendências, Estudos e Novas Vacinas no Mercado Pet</h2>
-                <p class="text-slate-600 text-sm mb-4 leading-relaxed">
-                    A medicina veterinária avança rapidamente. Recentes pesquisas trazem imunizantes mais duradouros e terapias preventivas inovadoras.
-                </p>
-                <ul class="space-y-2.5 text-xs md:text-sm text-slate-700">
-                    <li class="flex items-start gap-2">
-                        <span class="text-teal-600 font-bold">✔</span> 
-                        <span><strong>Novas Vacinas Polivalentes:</strong> Protocolos atualizados reduzem efeitos colaterais e ampliam a proteção contra estirpes resistentes de tosse dos canis.</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-teal-600 font-bold">✔</span> 
-                        <span><strong>Medicina Preventiva por DNA:</strong> Testes genéticos acessíveis ajudam tutores a prever predisposições a doenças cardíacas e renais em raças específicas.</span>
-                    </li>
-                </ul>
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-indigo-100 text-indigo-800 text-[11px] font-bold px-2.5 py-1 rounded-md uppercase">Inovação Veterinária</span>
+                    <span class="text-slate-400 text-xs">• Atualizado em 2026</span>
+                </div>
+                <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-4">Avanços na Imunologia Veterinária e Medicina Preventiva</h2>
+                
+                <div class="space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Protocolos de Vacinação Recombinante</h3>
+                        <p>As novas vacinas desenvolvidas com tecnologia recombinante reduzem os efeitos colaterais locais e sistémicos em cães e gatos, oferecendo uma resposta imune altamente direcionada contra estirpes virais mutantes, como parvovirose e cinomose.</p>
+                    </div>
+                    <div class="border-t pt-4">
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Mapeamento Genético Preventivo</h3>
+                        <p>Testes de DNA preventivos permitem identificar predisposições a doenças cardíacas, ortopédicas e renais específicas de raça antes mesmo dos primeiros sintomas clínicos aparecerem, permitindo terapias nutricionais precoces.</p>
+                    </div>
+                </div>
             </article>
         </div>
 
@@ -179,24 +186,24 @@
         <aside class="space-y-6">
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 sticky top-20">
                 <div class="flex items-center justify-between border-b pb-3 mb-4">
-                    <h3 class="font-bold text-slate-900 text-base">💡 Resumo Rápido</h3>
-                    <span class="text-[11px] bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded">Destaques</span>
+                    <h3 class="font-bold text-slate-900 text-base">💡 Sobre o Pet Ponto</h3>
+                    <span class="text-[11px] bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded">Oficial</span>
                 </div>
                 
-                <div class="space-y-4 text-xs text-slate-600">
-                    <div class="p-3 bg-slate-50 rounded-xl">
-                        <strong class="text-slate-800 block mb-1">🎯 Foco do Canal</strong>
-                        Produtos testados em vídeo com links diretos e seguros para compra no Mercado Livre.
+                <div class="space-y-4 text-xs text-slate-600 leading-relaxed">
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+                        <strong class="text-slate-800 block mb-1">🎯 Curadoria Independente</strong>
+                        Selecionamos e testamos apenas os melhores itens que aparecem em nossos vídeos para facilitar a sua escolha.
                     </div>
-                    <div class="p-3 bg-slate-50 rounded-xl">
-                        <strong class="text-slate-800 block mb-1">🤝 Transparência</strong>
-                        Comprando pelos nossos links, você apoia o projeto sem pagar absolutamente nada a mais por isso.
+                    <div class="p-3.5 bg-teal-50/50 rounded-xl border border-teal-100/50">
+                        <strong class="text-teal-900 block mb-1">🤝 Parceiro Mercado Livre</strong>
+                        Comprando através dos nossos links, você garante o melhor preço oficial e apoia o crescimento do projeto.
                     </div>
                 </div>
 
                 <!-- ÁREA DE ANÚNCIO 3: Barra Lateral -->
                 <div class="mt-6">
-                    <div class="bg-slate-200/70 border border-dashed border-slate-300 rounded-xl p-3 text-center text-xs text-slate-400">
+                    <div class="bg-slate-200/60 border border-dashed border-slate-300 rounded-xl p-3 text-center text-xs text-slate-400">
                         [ Anúncio Lateral AdSense ]
                     </div>
                 </div>
@@ -204,8 +211,11 @@
         </aside>
     </main>
 
-    <footer class="bg-slate-900 text-slate-400 text-center py-8 mt-12 text-xs">
-        <p>© 2026 Pet Ponto — Achadinhos, Cuidados e Ciência Veterinária. Todos os direitos reservados.</p>
+    <footer class="bg-slate-900 text-slate-400 text-center py-10 mt-16 text-xs border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 space-y-2">
+            <p class="font-bold text-slate-300 text-sm">🐾 Pet Ponto — Achadinhos, Cuidados e Ciência Veterinária</p>
+            <p>© 2026 Todos os direitos reservados. Participa do programa de Afiliados do Mercado Livre.</p>
+        </div>
     </footer>
 
     <!-- Dados e Scripts Interativos -->
@@ -242,14 +252,16 @@
         function renderizarProdutos(lista) {
             const grade = document.getElementById('gradeProdutos');
             grade.innerHTML = lista.map(p => `
-                <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition p-5 flex flex-col justify-between">
+                <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition duration-300 p-6 flex flex-col justify-between group">
                     <div>
-                        <span class="bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">${p.selo}</span>
-                        <h3 class="font-bold text-slate-900 text-base mt-2 mb-1">${p.nome}</h3>
-                        <span class="text-[11px] font-semibold text-teal-700 uppercase block mb-2">${p.categoria}</span>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-4">${p.descricao}</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-orange-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">${p.selo}</span>
+                            <span class="text-[11px] font-semibold text-teal-700 uppercase">${p.categoria}</span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-2 group-hover:text-teal-700 transition">${p.nome}</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">${p.descricao}</p>
                     </div>
-                    <a href="${p.linkML}" target="_blank" rel="noopener" class="block w-full text-center bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold text-xs py-3 rounded-xl transition shadow-sm">
+                    <a href="${p.linkML}" target="_blank" rel="noopener" class="block w-full text-center bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold text-xs py-3.5 rounded-xl transition shadow-sm shadow-yellow-400/20">
                         Ver Oferta no Mercado Livre ➔
                     </a>
                 </div>
@@ -260,10 +272,10 @@
             categoriaAtual = cat;
             document.querySelectorAll('.tab-btn').forEach(b => {
                 b.classList.remove('tab-active');
-                b.classList.add('bg-white', 'text-slate-600');
+                b.classList.add('bg-white', 'text-slate-600', 'hover:bg-slate-100');
             });
             btn.classList.add('tab-active');
-            btn.classList.remove('bg-white', 'text-slate-600');
+            btn.classList.remove('bg-white', 'text-slate-600', 'hover:bg-slate-100');
             filtrarProdutos();
         }
 
