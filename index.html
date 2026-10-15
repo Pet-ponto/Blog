@@ -1,1 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Ponto | Achadinhos, Comparativos e Dicas Pet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .tab-active { background-color: #0F766E; color: white; border-color: #0F766E; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Cabeçalho Fixo -->
+    <header class="bg-white/95 backdrop-blur border-b border-slate-200 sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-3.5 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-teal-700 tracking-tight flex items-center gap-1.5">
+                <span>🐾</span> Pet<span class="text-orange-500">Ponto</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 font-medium text-sm text-slate-600">
+                <a href="#vitrine" class="hover:text-teal-700 transition">Vitrine de Produtos</a>
+                <a href="#comparativo" class="hover:text-teal-700 transition">Artigos Comparativos</a>
+                <a href="#dicas" class="hover:text-teal-700 transition">Dicas & Cuidados</a>
+            </nav>
+            <a href="#vitrine" class="bg-orange-500 hover:bg-orange-600 text-white text-xs md:text-sm font-bold px-4 py-2 rounded-full transition shadow-sm">
+                🔥 Achadinhos dos Vídeos
+            </a>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="bg-gradient-to-br from-teal-900 via-teal-800 to-slate-900 text-white py-12 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="bg-teal-700/60 border border-teal-500/30 text-teal-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                Curadoria Independente dos Vídeos
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-4 mb-4 leading-tight">
+                Escolhas inteligentes para quem ama seu pet de verdade.
+            </h1>
+            <p class="text-teal-100 text-base md:text-lg mb-6 max-w-2xl mx-auto">
+                Viu algum produto nos nossos Shorts? Encontre aqui os testes, comparativos e links diretos para economizar na compra.
+            </p>
+            <div class="max-w-md mx-auto relative">
+                <input type="text" id="buscaInput" onkeyup="filtrarProdutos()" placeholder="Buscar produto (ex: moletom, dispenser, jornal...)" 
+                    class="w-full px-5 py-3.5 rounded-full text-slate-800 text-sm focus:outline-none focus:ring-4 focus:ring-orange-500/40 shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 1: Vitrine Rápida de Afiliados -->
+    <section id="vitrine" class="max-w-6xl mx-auto px-4 py-10">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900">⚡ Achadinhos em Destaque</h2>
+                <p class="text-sm text-slate-500">Produtos testados nos vídeos com acesso direto ao melhor preço:</p>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                <button onclick="filtrarCategoria('todos', this)" class="tab-btn tab-active px-4 py-2 rounded-full border border-slate-200 transition">Todos</button>
+                <button onclick="filtrarCategoria('Alimentação', this)" class="tab-btn bg-white text-slate-600 px-4 py-2 rounded-full border border-slate-200 transition">Alimentação & Água</button>
+                <button onclick="filtrarCategoria('Higiene', this)" class="tab-btn bg-white text-slate-600 px-4 py-2 rounded-full border border-slate-200 transition">Higiene</button>
+                <button onclick="filtrarCategoria('Conforto', this)" class="tab-btn bg-white text-slate-600 px-4 py-2 rounded-full border border-slate-200 transition">Roupas & Conforto</button>
+            </div>
+        </div>
+
+        <div id="gradeProdutos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- SEÇÃO 2: Artigo Comparativo Completo + Barra Lateral de Dicas -->
+    <main id="comparativo" class="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Coluna do Artigo Comparativo (2/3) -->
+        <article class="lg:col-span-2 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200/80">
+            <div class="flex items-center space-x-2 text-xs text-slate-500 mb-3">
+                <span class="bg-orange-100 text-orange-700 font-bold px-2.5 py-0.5 rounded uppercase">Comparativo Oficial</span>
+                <span>•</span>
+                <span>Leitura de 3 min</span>
+            </div>
+            
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 leading-tight">
+                Os 3 Melhores Achadinhos Pet para Facilitar a Sua Rotina em Casa
+            </h2>
+            
+            <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                Selecionamos os itens mais virais e funcionais testados em nossos vídeos para ajudar você a cuidar do seu cão ou gato com praticidade e economia.
+            </p>
+
+            <!-- Caixa de Veredito Rápido -->
+            <div class="bg-teal-50 border-l-4 border-teal-600 p-5 rounded-r-xl mb-8">
+                <h3 class="font-bold text-teal-900 text-base mb-2">⚡ Resumo Rápido: Qual escolher?</h3>
+                <ul class="space-y-2 text-sm text-teal-800">
+                    <li>❄️ <strong>Melhor para o Frio:</strong> Moletom Pet com Capuz — Tecido levezinho, macio e que protege sem incomodar.</li>
+                    <li>🥣 <strong>Melhor para Organização:</strong> Dispenser Hermético 2,5L — Tampa 2 em 1 com copo medidor e trava anti-humidade.</li>
+                    <li>🐾 <strong>Melhor Higiene Diária:</strong> Jornal All Papers Pet — Absorção rápida, ecológica e não mancha as patas de tinta.</li>
+                </ul>
+            </div>
+
+            <!-- Tabela Comparativa -->
+            <div class="overflow-x-auto mb-8 border border-slate-200 rounded-xl">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-slate-100 text-slate-700 border-b border-slate-200">
+                            <th class="p-3.5 font-bold">Produto</th>
+                            <th class="p-3.5 font-bold">Ponto Forte</th>
+                            <th class="p-3.5 font-bold">Indicação Ideal</th>
+                            <th class="p-3.5 font-bold text-center">Nota</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3.5 font-semibold text-teal-800">Moletom Pet com Capuz</td>
+                            <td class="p-3.5 text-slate-600">Confortável e estiloso em qualquer estação</td>
+                            <td class="p-3.5 text-slate-600">Passeios em dias frescos ou frios</td>
+                            <td class="p-3.5 text-center font-bold text-amber-500">9.8 ⭐</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3.5 font-semibold text-teal-800">Dispenser Hermético 2,5L</td>
+                            <td class="p-3.5 text-slate-600">Copo medidor integrado e trava de pressão</td>
+                            <td class="p-3.5 text-slate-600">Acabar com sacos rasgados e bagunça</td>
+                            <td class="p-3.5 text-center font-bold text-amber-500">9.7 ⭐</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-3.5 font-semibold text-teal-800">Jornal All Papers Pet</td>
+                            <td class="p-3.5 text-slate-600">Papel absorvente sem tinta tóxica</td>
+                            <td class="p-3.5 text-slate-600">Higiene diária sem manchar o piso</td>
+                            <td class="p-3.5 text-center font-bold text-amber-500">9.6 ⭐</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Análises Detalhadas -->
+            <h3 class="text-xl font-bold text-slate-900 mb-4">Análise Completa de Cada Item</h3>
+            <div id="analisesDetalhadas" class="space-y-6"></div>
+        </article>
+
+        <!-- Barra Lateral: Dicas (1/3) -->
+        <aside id="dicas" class="space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 sticky top-20">
+                <div class="flex items-center justify-between border-b pb-3 mb-4">
+                    <h3 class="font-bold text-slate-900 text-lg">💡 Guias & Dicas</h3>
+                    <span class="text-[11px] bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded">Toque para ler</span>
+                </div>
+                <div id="listaDicas" class="space-y-4"></div>
+
+                <!-- Aviso de Transparência -->
+                <div class="bg-slate-100 p-4 rounded-xl text-xs text-slate-500 leading-relaxed mt-6">
+                    <strong>Transparência:</strong> O Pet Ponto participa do programa de afiliados do Mercado Livre. Comprando pelos nossos links, você paga o mesmo valor e apoia o canal.
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Modal de Leitura dos Guias -->
+    <div id="modalArtigo" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative">
+            <button onclick="fecharArtigo()" class="absolute top-4 right-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold w-9 h-9 rounded-full flex items-center justify-center transition">✕</button>
+            <span id="modalTema" class="text-xs font-bold text-teal-600 uppercase"></span>
+            <h2 id="modalTitulo" class="text-2xl font-extrabold text-slate-900 mt-1 mb-4"></h2>
+            <div id="modalConteudo" class="text-slate-600 text-sm md:text-base space-y-4 leading-relaxed"></div>
+            <div id="modalCta" class="mt-6 p-5 bg-orange-50 border border-orange-200 rounded-xl"></div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-slate-400 text-center py-8 mt-12 text-xs">
+        <p>© 2026 Pet Ponto — Comparativos e Dicas para Pets. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Dados e Links do Mercado Livre -->
+    <script>
+        const meusProdutos = [
+            {
+                id: 1,
+                nome: "Moletom Pet com Capuz e Punhos Rosa",
+                categoria: "Conforto",
+                selo: "Destaque no Shorts",
+                descricao: "Tecido levezinho e super macio. Protege o pet do vento e do chão frio sem incomodar ou prender os movimentos.",
+                pros: "Não aperta as patas, visual elegante em qualquer estação e fácil de lavar.",
+                contras: "Importante medir o tórax do pet antes de escolher o tamanho.",
+                imagem: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80",
+                linkML: "https://meli.la/1kD6kp9"
+            },
+            {
+                id: 2,
+                nome: "Dispenser Hermético 2,5L com Copo Medidor",
+                categoria: "Alimentação",
+                selo: "Mais Prático",
+                descricao: "Adeus sacos rasgados e ração murcha! Possui travas de pressão contra humidade e tampa 2 em 1 que serve como copo medidor graduado.",
+                pros: "Mantém a ração crocante, evita desperdício e possui pega ergonómica.",
+                contras: "Indicado para ração seca e grãos em geral.",
+                imagem: "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=600&q=80",
+                linkML: "https://meli.la/1n8hAvV"
+            },
+            {
+                id: 3,
+                nome: "Jornal Higiênico All Papers Pet Absorvente",
+                categoria: "Higiene",
+                selo: "Campeão de Vendas",
+                descricao: "Papel absorvente ecológico e seguro. Absorve o xixi rapidamente e neutraliza odores sem soltar tinta que mancha as patas do animal.",
+                pros: "Não mancha o piso, excelente custo-benefício e alta absorção.",
+                contras: "Para cães muito grandes, recomenda-se usar mais de uma folha.",
+                imagem: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=600&q=80",
+                linkML: "https://meli.la/1qmXoEa"
+            }
+        ];
+
+        const minhasDicas = [
+            {
+                id: 1,
+                tema: "Guia de Tamanhos",
+                titulo: "Como medir o seu pet antes de comprar roupinhas e moletons na internet",
+                resumo: "Evite trocas desnecessárias medindo o tórax e o comprimento correto do seu cão ou gato.",
+                conteudo: `
+                    <p>Comprar moletons e roupinhas online é super prático, mas escolher apenas pelo peso do animal pode falhar. Use uma fita métrica e verifique duas medidas fundamentais:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Circunferência do Tórax:</strong> A parte mais larga logo atrás das patas dianteiras. Deixe dois dedos de folga para o pet respirar e se movimentar com total liberdade.</li>
+                        <li><strong>Comprimento das Costas:</strong> Da base do pescoço até o início do rabo.</li>
+                    </ul>
+                `,
+                produtoRelacionadoId: 1
+            },
+            {
+                id: 2,
+                tema: "Conservação de Alimentos",
+                titulo: "Como conservar a ração crocante por mais tempo e evitar desperdícios",
+                resumo: "Descubra por que deixar sacos abertos estraga o alimento e atrai insetos para a dispensa.",
+                conteudo: `
+                    <p>Quando deixamos o saco de ração aberto na área de serviço, o alimento entra em contacto com o ar e oxida rapidamente, perdendo o aroma que atrai o animal.</p>
+                    <p>O uso de um <strong>Dispenser Hermético com travas de pressão</strong> sela o conteúdo contra a humidade e o ar, garantindo que a última porção do mês fique tão crocante quanto a primeira.</p>
+                `,
+                produtoRelacionadoId: 2
+            },
+            {
+                id: 3,
+                tema: "Higiene e Saúde",
+                titulo: "Jornal comum vs. Papel absorvente específico: por que o jornal tradicional faz mal?",
+                resumo: "Entenda os riscos da tinta de chumbo e descubra como manter o piso e as patas impecáveis.",
+                conteudo: `
+                    <p>O jornal de banca tradicional solta resíduos de tinta preta e chumbo quando entra em contacto com líquidos. Isso mancha o piso e deixa as patinhas do animal sujas pela casa.</p>
+                    <p>O <strong>All Papers Pet</strong> utiliza papel virgem tratado e de alta absorção, que retém o líquido instantaneamente, neutraliza odores desagradáveis e protege a saúde do seu pet.</p>
+                `,
+                produtoRelacionadoId: 3
+            }
+        ];
+
+        let categoriaAtual = 'todos';
+
+        function renderizarProdutos(lista) {
+            const grade = document.getElementById('gradeProdutos');
+            grade.innerHTML = lista.map(p => `
+                <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-44 bg-slate-100">
+                            <img src="${p.imagem}" alt="${p.nome}" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-orange-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
+                                ${p.selo}
+                            </span>
+                        </div>
+                        <div class="p-4">
+                            <span class="text-[11px] font-semibold text-teal-700 uppercase">${p.categoria}</span>
+                            <h3 class="font-bold text-slate-900 text-base mt-0.5 mb-2 leading-snug">${p.nome}</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-3">${p.descricao}</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <a href="${p.linkML}" target="_blank" rel="noopener" class="block w-full text-center bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold text-xs py-3 rounded-xl transition shadow-sm">
+                            Ver Oferta no Mercado Livre ➔
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderizarAnalises() {
+            const container = document.getElementById('analisesDetalhadas');
+            container.innerHTML = meusProdutos.map((p, index) => `
+                <div class="border border-slate-200 rounded-xl p-5 hover:border-teal-500 transition">
+                    <div class="flex flex-col md:flex-row gap-5 items-center">
+                        <img src="${p.imagem}" alt="${p.nome}" class="w-full md:w-32 h-32 object-cover rounded-lg">
+                        <div class="flex-1">
+                            <span class="text-[11px] font-bold text-orange-600 uppercase">${p.selo}</span>
+                            <h4 class="text-lg font-bold text-slate-900">${index + 1}. ${p.nome}</h4>
+                            <p class="text-xs md:text-sm text-slate-600 mt-1 mb-3">${p.descricao}</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-xs mb-4">
+                                <div class="bg-emerald-50 text-emerald-800 p-2.5 rounded-lg">
+                                    <strong>👍 Prós:</strong> ${p.pros}
+                                </div>
+                                <div class="bg-rose-50 text-rose-800 p-2.5 rounded-lg">
+                                    <strong>💡 Atenção:</strong> ${p.contras}
+                                </div>
+                            </div>
+                            <div>
+                                <a href="${p.linkML}" target="_blank" rel="noopener" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold text-xs px-5 py-2.5 rounded-xl transition shadow-sm">
+                                    Ver no Mercado Livre ➔
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderizarDicas() {
+            const container = document.getElementById('listaDicas');
+            container.innerHTML = minhasDicas.map(d => `
+                <div onclick="abrirArtigo(${d.id})" class="group border-b border-slate-100 pb-3.5 last:border-0 cursor-pointer">
+                    <span class="text-[11px] font-bold text-teal-600 uppercase">${d.tema}</span>
+                    <h4 class="font-bold text-slate-800 text-sm mt-0.5 group-hover:text-orange-500 transition">${d.titulo}</h4>
+                    <p class="text-xs text-slate-500 mt-1">${d.resumo}</p>
+                    <span class="inline-block text-[11px] font-semibold text-orange-600 mt-1.5 group-hover:underline">Ler guia completo →</span>
+                </div>
+            `).join('');
+        }
+
+        function abrirArtigo(id) {
+            const dica = minhasDicas.find(d => d.id === id);
+            const prod = meusProdutos.find(p => p.id === dica.produtoRelacionadoId);
+            
+            document.getElementById('modalTema').innerText = dica.tema;
+            document.getElementById('modalTitulo').innerText = dica.titulo;
+            document.getElementById('modalConteudo').innerHTML = dica.conteudo;
+            
+            if (prod) {
+                document.getElementById('modalCta').innerHTML = `
+                    <p class="text-xs font-bold text-orange-800 uppercase mb-1">🔥 Produto Recomendado neste Guia:</p>
+                    <h4 class="font-bold text-slate-900 text-base mb-3">${prod.nome}</h4>
+                    <div>
+                        <a href="${prod.linkML}" target="_blank" rel="noopener" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold text-xs px-5 py-3 rounded-xl transition shadow-sm">
+                            Ver Oferta no Mercado Livre ➔
+                        </a>
+                    </div>
+                `;
+            }
+            
+            const modal = document.getElementById('modalArtigo');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function fecharArtigo() {
+            const modal = document.getElementById('modalArtigo');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function filtrarCategoria(cat, btn) {
+            categoriaAtual = cat;
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.remove('tab-active');
+                b.classList.add('bg-white', 'text-slate-600');
+            });
+            btn.classList.add('tab-active');
+            btn.classList.remove('bg-white', 'text-slate-600');
+            filtrarProdutos();
+        }
+
+        function filtrarProdutos() {
+            const termo = document.getElementById('buscaInput').value.toLowerCase();
+            const filtrados = meusProdutos.filter(p => {
+                const bateCategoria = categoriaAtual === 'todos' || p.categoria === categoriaAtual;
+                const bateBusca = p.nome.toLowerCase().includes(termo) || p.descricao.toLowerCase().includes(termo);
+                return bateCategoria && bateBusca;
+            });
+            renderizarProdutos(filtrados);
+        }
+
+        renderizarProdutos(meusProdutos);
+        renderizarAnalises();
+        renderizarDicas();
+    </script>
+</body>
+</html>
 
