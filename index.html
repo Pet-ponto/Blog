@@ -3,39 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Ponto | O Portal Definitivo de Achadinhos e Cuidados Pet</title>
+    <title>Pet Ponto | O Portal de Achadinhos e Cuidados Pet</title>
+    
+    <!-- Meta Tags de SEO e Compartilhamento -->
+    <meta name="description" content="Curadoria de produtos pet no Mercado Livre, guias práticos de rotina, higiene, bem-estar e informações sobre cuidados para cães, gatos e pequenos mamíferos.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f766e">
+    <meta property="og:title" content="Pet Ponto | O Portal de Achadinhos e Cuidados Pet">
+    <meta property="og:description" content="Achadinhos selecionados, análises de rotina e guias informativos para o bem-estar do seu pet.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
     <!-- Script do Google AdSense Integrado -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6449496146815661" crossorigin="anonymous"></script>
+    
+    <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .tab-active { background-color: #0d9488; color: white; box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25); }
     </style>
 </head>
-<body class="bg-slate-50/70 text-slate-800">
+<body class="bg-slate-50/70 text-slate-800 antialiased selection:bg-teal-600 selection:text-white">
 
-    <!-- Cabeçalho Fixo -->
+    <!-- Acessibilidade: Pular para o conteúdo principal -->
+    <a href="#vitrine" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-teal-800 focus:text-white focus:px-4 focus:py-2.5 focus:rounded-xl focus:font-bold focus:shadow-lg">
+        Pular para o conteúdo principal
+    </a>
+
+    <!-- Cabeçalho Fixo com Menu Responsivo -->
     <header class="bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 py-3.5 flex justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold text-teal-800 tracking-tight flex items-center gap-2">
-                <span class="bg-teal-100 text-teal-800 p-1.5 rounded-xl text-xl">🐾</span> Pet<span class="text-orange-500">Ponto</span>
+            <a href="#" class="text-2xl font-extrabold text-teal-800 tracking-tight flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-teal-500 rounded-lg" aria-label="Pet Ponto - Ir para o início">
+                <span class="bg-teal-100 text-teal-800 p-1.5 rounded-xl text-xl" aria-hidden="true">🐾</span> Pet<span class="text-orange-500">Ponto</span>
             </a>
-            <nav class="hidden md:flex space-x-7 font-semibold text-sm text-slate-600">
-                <a href="#painel" class="hover:text-teal-700 transition">Painel</a>
-                <a href="#vitrine" class="hover:text-teal-700 transition">Achadinhos</a>
-                <a href="#cuidados" class="hover:text-teal-700 transition">Cuidados & Saúde</a>
-                <a href="#tendencias" class="hover:text-teal-700 transition">Inovação & Ciência</a>
+
+            <!-- Navegação Desktop -->
+            <nav aria-label="Menu principal" class="hidden md:flex space-x-7 font-semibold text-sm text-slate-600">
+                <a href="#painel" class="hover:text-teal-700 transition py-1">Painel</a>
+                <a href="#vitrine" class="hover:text-teal-700 transition py-1">Achadinhos</a>
+                <a href="#cuidados" class="hover:text-teal-700 transition py-1">Cuidados & Saúde</a>
+                <a href="#especiais" class="hover:text-teal-700 transition py-1">Pequenos Mamíferos</a>
+                <a href="#tendencias" class="hover:text-teal-700 transition py-1">Inovação & Ciência</a>
             </nav>
-            <a href="#vitrine" class="bg-orange-500 hover:bg-orange-600 text-white text-xs md:text-sm font-bold px-4.5 py-2.5 rounded-xl transition shadow-sm shadow-orange-500/20">
-                🔥 Ofertas Mercado Livre
-            </a>
+
+            <!-- Botão CTA + Botão Hambúrguer Mobile -->
+            <div class="flex items-center gap-2">
+                <a href="#vitrine" class="hidden sm:inline-flex bg-orange-500 hover:bg-orange-600 text-white text-xs md:text-sm font-bold px-4 py-2.5 rounded-xl transition shadow-sm shadow-orange-500/20">
+                    🔥 Ofertas Mercado Livre
+                </a>
+                <button id="menuMobileBtn" type="button" onclick="alternarMenuMobile()" aria-expanded="false" aria-controls="menuMobile" aria-label="Abrir menu de navegação" class="md:hidden inline-flex items-center justify-center p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500 transition">
+                    <!-- Ícone Hambúrguer -->
+                    <svg id="iconeMenuAbrir" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <!-- Ícone Fechar (X) -->
+                    <svg id="iconeMenuFechar" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
+
+        <!-- Menu Mobile Retrátil -->
+        <nav id="menuMobile" aria-label="Menu principal móvel" class="hidden md:hidden bg-white border-t border-slate-200/80 px-4 pt-3 pb-5 space-y-2 shadow-lg">
+            <a href="#painel" onclick="fecharMenuMobile()" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-800 transition">⚡ Painel Rápido</a>
+            <a href="#vitrine" onclick="fecharMenuMobile()" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-800 transition">🛍️ Achadinhos em Destaque</a>
+            <a href="#cuidados" onclick="fecharMenuMobile()" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-800 transition">🐶🐱 Cuidados & Rotina</a>
+            <a href="#especiais" onclick="fecharMenuMobile()" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-800 transition">🐰🐹 Pequenos Mamíferos</a>
+            <a href="#tendencias" onclick="fecharMenuMobile()" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-800 transition">🔬 Inovação & Ciência</a>
+            <div class="pt-2">
+                <a href="#vitrine" onclick="fecharMenuMobile()" class="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold px-4 py-3 rounded-xl transition shadow-sm">
+                    🔥 Ver Ofertas no Mercado Livre
+                </a>
+            </div>
+        </nav>
     </header>
 
     <!-- Banner Principal -->
     <section class="bg-gradient-to-br from-teal-950 via-teal-900 to-slate-900 text-white py-14 px-4 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]" aria-hidden="true"></div>
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <span class="inline-block bg-teal-800/80 border border-teal-600/40 text-teal-200 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-4">
                 ✨ Curadoria Independente & Bem-Estar Animal
@@ -44,35 +95,42 @@
                 Tudo o que o seu pet precisa, <br class="hidden md:block"><span class="text-teal-400">em um só ponto.</span>
             </h1>
             <p class="text-slate-300 text-sm md:text-base mb-8 max-w-2xl mx-auto leading-relaxed">
-                Produtos virais testados em vídeo, análises técnicas de rotina e guias especializados para tutores exigentes.
+                Produtos em destaque apresentados em vídeo, dicas práticas de rotina e guias informativos para tutores dedicados.
             </p>
+            
+            <!-- Barra de Busca Aprimorada -->
             <div class="max-w-xl mx-auto relative shadow-2xl rounded-full">
-                <input type="text" id="buscaInput" onkeyup="filtrarProdutos()" placeholder="Pesquisar produto, rotina, saúde, ração..." 
-                    class="w-full px-6 py-4 rounded-full text-slate-800 text-sm md:text-base focus:outline-none focus:ring-4 focus:ring-orange-500/30 bg-white/95 backdrop-blur">
+                <label for="buscaInput" class="sr-only">Pesquisar produtos por nome, descrição ou categoria</label>
+                <input type="search" id="buscaInput" oninput="filtrarProdutos()" placeholder="Pesquisar produto, rotina, higiene, ração..." autocomplete="off"
+                    class="w-full pl-6 pr-14 py-4 rounded-full text-slate-800 text-sm md:text-base focus:outline-none focus:ring-4 focus:ring-orange-500/40 bg-white/95 backdrop-blur">
+                <button type="button" id="btnLimparInput" onclick="limparApenasTextoBusca()" aria-label="Limpar texto da pesquisa"
+                    class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 bg-slate-200 hover:bg-slate-300 text-slate-700 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition">
+                    ✕
+                </button>
             </div>
         </div>
     </section>
 
     <!-- PAINEL DE COMANDO RÁPIDO -->
-    <nav id="painel" class="max-w-6xl mx-auto px-4 -mt-6 relative z-30">
+    <nav id="painel" aria-label="Atalhos das seções" class="max-w-6xl mx-auto px-4 -mt-6 relative z-30">
         <div class="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-200/80 p-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
             <a href="#vitrine" class="group p-4 rounded-xl hover:bg-teal-50/70 transition border border-slate-100 flex flex-col items-center">
-                <span class="text-2xl mb-1.5 group-hover:scale-110 transition">⚡</span>
+                <span class="text-2xl mb-1.5 group-hover:scale-110 transition" aria-hidden="true">⚡</span>
                 <span class="text-xs font-bold text-slate-800">Achadinhos</span>
                 <span class="text-[10px] text-slate-500">Vídeos & Ofertas</span>
             </a>
             <a href="#cuidados" class="group p-4 rounded-xl hover:bg-teal-50/70 transition border border-slate-100 flex flex-col items-center">
-                <span class="text-2xl mb-1.5 group-hover:scale-110 transition">🐶🐱</span>
+                <span class="text-2xl mb-1.5 group-hover:scale-110 transition" aria-hidden="true">🐶🐱</span>
                 <span class="text-xs font-bold text-slate-800">Rotina Cães & Gatos</span>
                 <span class="text-[10px] text-slate-500">Cuidados Diários</span>
             </a>
             <a href="#especiais" class="group p-4 rounded-xl hover:bg-teal-50/70 transition border border-slate-100 flex flex-col items-center">
-                <span class="text-2xl mb-1.5 group-hover:scale-110 transition">🐰🐹</span>
+                <span class="text-2xl mb-1.5 group-hover:scale-110 transition" aria-hidden="true">🐰🐹</span>
                 <span class="text-xs font-bold text-slate-800">Pequenos Mamíferos</span>
                 <span class="text-[10px] text-slate-500">Coelhos e Roedores</span>
             </a>
             <a href="#tendencias" class="group p-4 rounded-xl hover:bg-teal-50/70 transition border border-slate-100 flex flex-col items-center">
-                <span class="text-2xl mb-1.5 group-hover:scale-110 transition">🔬</span>
+                <span class="text-2xl mb-1.5 group-hover:scale-110 transition" aria-hidden="true">🔬</span>
                 <span class="text-xs font-bold text-slate-800">Ciência Veterinária</span>
                 <span class="text-[10px] text-slate-500">Estudos & Vacinas</span>
             </a>
@@ -80,7 +138,7 @@
     </nav>
 
     <!-- ÁREA DE ANÚNCIO 1: Topo -->
-    <div class="max-w-6xl mx-auto px-4 mt-8">
+    <div class="max-w-6xl mx-auto px-4 mt-8" aria-label="Publicidade">
         <div class="bg-slate-200/60 border border-dashed border-slate-300 rounded-xl p-3 text-center text-xs text-slate-400">
             [ Espaço Publicitário - Google AdSense ]
         </div>
@@ -88,19 +146,53 @@
 
     <!-- SEÇÃO 1: Vitrine de Achadinhos -->
     <section id="vitrine" class="max-w-6xl mx-auto px-4 py-10">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+        
+        <!-- Aviso de Transparência sobre Links Afiliados -->
+        <div class="mb-6 bg-amber-50/90 border border-amber-200/80 rounded-xl px-4 py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-amber-900">
+            <p class="leading-relaxed">
+                <strong>🔎 Aviso de Transparência:</strong> Este site participa do Programa de Afiliados do Mercado Livre. Ao comprar pelos links indicados, podemos receber uma pequena comissão sem nenhum custo extra para você.
+            </p>
+            <span class="shrink-0 bg-amber-100 text-amber-800 font-bold px-2.5 py-1 rounded-md text-[10px] uppercase tracking-wider">Publicidade / Afiliados</span>
+        </div>
+
+        <!-- Cabeçalho da Vitrine + Filtros e Ordenação -->
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-6 gap-4">
             <div>
                 <span class="text-xs font-bold text-teal-700 tracking-wider uppercase">Vitrine de Afiliados</span>
                 <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Achadinhos em Destaque</h2>
             </div>
-            <div class="flex flex-wrap gap-2 text-xs font-semibold">
-                <button onclick="filtrarCategoria('todos', this)" class="tab-btn tab-active px-4 py-2.5 rounded-full border border-slate-200 transition">Todos</button>
-                <button onclick="filtrarCategoria('Alimentação', this)" class="tab-btn bg-white text-slate-600 hover:bg-slate-100 px-4 py-2.5 rounded-full border border-slate-200 transition">Alimentação</button>
-                <button onclick="filtrarCategoria('Higiene', this)" class="tab-btn bg-white text-slate-600 hover:bg-slate-100 px-4 py-2.5 rounded-full border border-slate-200 transition">Higiene</button>
-                <button onclick="filtrarCategoria('Conforto', this)" class="tab-btn bg-white text-slate-600 hover:bg-slate-100 px-4 py-2.5 rounded-full border border-slate-200 transition">Conforto</button>
+
+            <div class="w-full lg:w-auto flex flex-col sm:flex-row sm:items-center justify-between lg:justify-end gap-3">
+                <!-- Botões de Categoria -->
+                <div class="flex flex-wrap gap-2 text-xs font-semibold" role="group" aria-label="Filtrar produtos por categoria">
+                    <button type="button" data-categoria="todos" onclick="filtrarCategoria('todos', this)" aria-pressed="true" class="tab-btn tab-active px-4 py-2.5 rounded-full border border-slate-200 transition">Todos</button>
+                    <button type="button" data-categoria="Alimentação" onclick="filtrarCategoria('Alimentação', this)" aria-pressed="false" class="tab-btn bg-white text-slate-600 hover:bg-slate-100 px-4 py-2.5 rounded-full border border-slate-200 transition">Alimentação</button>
+                    <button type="button" data-categoria="Higiene" onclick="filtrarCategoria('Higiene', this)" aria-pressed="false" class="tab-btn bg-white text-slate-600 hover:bg-slate-100 px-4 py-2.5 rounded-full border border-slate-200 transition">Higiene</button>
+                    <button type="button" data-categoria="Conforto" onclick="filtrarCategoria('Conforto', this)" aria-pressed="false" class="tab-btn bg-white text-slate-600 hover:bg-slate-100 px-4 py-2.5 rounded-full border border-slate-200 transition">Conforto</button>
+                </div>
+
+                <!-- Seletor de Ordenação -->
+                <div class="flex items-center gap-2">
+                    <label for="ordenarSelect" class="text-xs font-semibold text-slate-600 whitespace-nowrap">Ordenar:</label>
+                    <select id="ordenarSelect" onchange="filtrarProdutos()" class="bg-white border border-slate-200 text-slate-700 text-xs font-semibold rounded-xl px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                        <option value="destaques">Destaques</option>
+                        <option value="az">Nome (A–Z)</option>
+                        <option value="za">Nome (Z–A)</option>
+                        <option value="categoria">Por Categoria</option>
+                    </select>
+                </div>
             </div>
         </div>
 
+        <!-- Barra de Status da Busca e Opção de Limpar Tudo -->
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 text-xs text-slate-500">
+            <p id="contadorResultados" aria-live="polite" class="font-medium"></p>
+            <button type="button" id="btnLimparFiltros" onclick="limparBuscaEFiltros()" class="hidden text-teal-700 hover:text-teal-900 font-bold underline flex items-center gap-1 transition">
+                <span>✕ Limpar busca e filtros</span>
+            </button>
+        </div>
+
+        <!-- Grade de Produtos -->
         <div id="gradeProdutos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </section>
 
@@ -114,22 +206,22 @@
             <article class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200/80">
                 <div class="flex items-center gap-2 mb-3">
                     <span class="bg-teal-100 text-teal-800 text-[11px] font-bold px-2.5 py-1 rounded-md uppercase">Rotina & Bem-Estar</span>
-                    <span class="text-slate-400 text-xs">• Análise Técnica</span>
+                    <span class="text-slate-400 text-xs">• Guia Prático</span>
                 </div>
                 <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-4">Estratégias de Rotina para Cães e Gatos</h2>
                 
                 <div class="space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
                     <div>
-                        <h3 class="font-bold text-slate-900 text-base mb-1">1. Prevenção de Doenças Renais em Felinos</h3>
-                        <p>Gatos possuem baixa propensão natural a beber água parada devido à sua descendência desértica. O uso de fontes elétricas com circulação contínua e sachês úmidos na rotina aumenta a ingestão diária de líquidos, reduzindo drasticamente o risco de cristais urinários.</p>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">1. Estímulo à Hidratação e Saúde Urinária em Felinos</h3>
+                        <p>Gatos costumam ter menor interesse por água parada devido à sua origem evolutiva em ambientes áridos. O uso de fontes com circulação contínua e a oferta de alimentos úmidos (sachês) na rotina ajudam a estimular a ingestão diária de líquidos, colaborando para o cuidado do trato urinário sob orientação veterinária.</p>
                     </div>
                     <div class="border-t pt-4">
                         <h3 class="font-bold text-slate-900 text-base mb-1">2. Enriquecimento Ambiental Canino</h3>
-                        <p>Cães que passam muito tempo sozinhos desenvolvem ansiedade de separação. A utilização de dispensers interativos de ração e comedouros lentos estimula o instinto de caça e forragem, gastando energia mental e prevenindo a destruição de móveis em casa.</p>
+                        <p>Cães que passam períodos prolongados ociosos podem demonstrar tédio e agitação. A utilização de brinquedos recheáveis, dispensers interativos e comedouros lentos estimula o comportamento natural de forrageamento, auxiliando no gasto de energia mental e no bem-estar diário.</p>
                     </div>
                     <div class="border-t pt-4">
-                        <h3 class="font-bold text-slate-900 text-base mb-1">3. Higiene Doméstica e Pisos Seguros</h3>
-                        <p>O hábito de utilizar jornais tradicionais de papel com tinta gráfica comum traz riscos pelo contacto contínuo com resíduos de chumbo e solventes. A transição para tapetes absorventes de celulose virgem garante patas limpas e absorção imediata sem odor.</p>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">3. Higiene Doméstica e Pisos Limpos</h3>
+                        <p>O uso de jornais comuns com tinta de impressão tradicional pode sujar as patas dos animais e transferir resíduos de tinta para o piso. A transição para tapetes ou papéis higiênicos absorventes próprios para pets contribui para manter o ambiente mais limpo e auxilia no controle de odores do dia a dia.</p>
                     </div>
                 </div>
             </article>
@@ -144,18 +236,18 @@
                 
                 <div class="space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
                     <div>
-                        <h3 class="font-bold text-slate-900 text-base mb-1">O Papel Vital do Feno de Capim</h3>
-                        <p>Diferente de cães e gatos, coelhos e porquinhos-da-índia possuem dentes de crescimento contínuo. O feno limpo e fibroso não é apenas um alimento, mas a ferramenta mecânica essencial para o desgaste correto dos molares e regulação da flora intestinal.</p>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">O Papel Importante do Feno de Capim</h3>
+                        <p>Diferente de cães e gatos, coelhos e porquinhos-da-índia possuem dentes de crescimento contínuo. O feno limpo e fibroso atua tanto na nutrição quanto no auxílio mecânico para o desgaste natural da dentição e no bom funcionamento do trânsito intestinal.</p>
                     </div>
                     <div class="border-t pt-4">
-                        <h3 class="font-bold text-slate-900 text-base mb-1">Controle Térmico e Ventilação</h3>
-                        <p>Espécies de pequeno porte são extremamente sensíveis a temperaturas superiores a 28°C e correntes de ar diretas. O posicionamento do habitat exige ambientes arejados, longe da incidência solar direta para evitar choques térmicos e insolação.</p>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Conforto Térmico e Ventilação</h3>
+                        <p>Espécies de pequeno porte costumam ser sensíveis ao calor excessivo (geralmente acima de 28°C) e a correntes de ar diretas. O posicionamento do alojamento deve priorizar ambientes frescos, arejados e protegidos da luz solar direta para ajudar a prevenir o estresse térmico.</p>
                     </div>
                 </div>
             </article>
 
             <!-- ÁREA DE ANÚNCIO 2: Meio do Conteúdo -->
-            <div class="my-4">
+            <div class="my-4" aria-label="Publicidade">
                 <div class="bg-slate-200/60 border border-dashed border-slate-300 rounded-xl p-3 text-center text-xs text-slate-400">
                     [ Espaço Publicitário - Google AdSense ]
                 </div>
@@ -165,18 +257,21 @@
             <article id="tendencias" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200/80">
                 <div class="flex items-center gap-2 mb-3">
                     <span class="bg-indigo-100 text-indigo-800 text-[11px] font-bold px-2.5 py-1 rounded-md uppercase">Inovação Veterinária</span>
-                    <span class="text-slate-400 text-xs">• Atualizado em 2026</span>
+                    <span class="text-slate-400 text-xs">• Conteúdo Informativo</span>
                 </div>
-                <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-4">Avanços na Imunologia Veterinária e Medicina Preventiva</h2>
+                <h2 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-4">Tendências na Imunologia Veterinária e Medicina Preventiva</h2>
                 
                 <div class="space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed">
                     <div>
-                        <h3 class="font-bold text-slate-900 text-base mb-1">Protocolos de Vacinação Recombinante</h3>
-                        <p>As novas vacinas desenvolvidas com tecnologia recombinante reduzem os efeitos colaterais locais e sistémicos em cães e gatos, oferecendo uma resposta imune altamente direcionada contra estirpes virais mutantes, como parvovirose e cinomose.</p>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Tecnologias em Protocolos de Vacinação</h3>
+                        <p>Vacinas modernas desenvolvidas com tecnologia recombinante vêm sendo utilizadas na medicina veterinária para oferecer respostas imunológicas direcionadas contra agentes infecciosos importantes, buscando um bom perfil de segurança conforme avaliação individual do médico-veterinário.</p>
                     </div>
                     <div class="border-t pt-4">
-                        <h3 class="font-bold text-slate-900 text-base mb-1">Mapeamento Genético Preventivo</h3>
-                        <p>Testes de DNA preventivos permitem identificar predisposições a doenças cardíacas, ortopédicas e renais específicas de raça antes mesmo dos primeiros sintomas clínicos aparecerem, permitindo terapias nutricionais precoces.</p>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Testes Genéticos e Acompanhamento Preventivo</h3>
+                        <p>Exames de triagem genética podem auxiliar tutores e veterinários a identificar predisposições hereditárias em determinadas raças, facilitando o planejamento de check-ups periódicos e cuidados nutricionais personalizados ao longo da vida do animal.</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 text-[11px] text-slate-500">
+                        <strong>⚕️ Aviso Importante:</strong> Os conteúdos deste portal têm caráter exclusivamente informativo e educacional, não substituindo a consulta, o diagnóstico ou a prescrição de um médico-veterinário.
                     </div>
                 </div>
             </article>
@@ -187,22 +282,22 @@
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 sticky top-20">
                 <div class="flex items-center justify-between border-b pb-3 mb-4">
                     <h3 class="font-bold text-slate-900 text-base">💡 Sobre o Pet Ponto</h3>
-                    <span class="text-[11px] bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded">Oficial</span>
+                    <span class="text-[11px] bg-teal-100 text-teal-800 font-semibold px-2 py-0.5 rounded">Informativo</span>
                 </div>
                 
                 <div class="space-y-4 text-xs text-slate-600 leading-relaxed">
                     <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
-                        <strong class="text-slate-800 block mb-1">🎯 Curadoria Independente</strong>
-                        Selecionamos e testamos apenas os melhores itens que aparecem em nossos vídeos para facilitar a sua escolha.
+                        <strong class="text-slate-800 block mb-1">🎯 Curadoria de Produtos</strong>
+                        Reunimos itens práticos e bem avaliados que apresentamos em nossos vídeos para facilitar a sua comparação no dia a dia.
                     </div>
                     <div class="p-3.5 bg-teal-50/50 rounded-xl border border-teal-100/50">
-                        <strong class="text-teal-900 block mb-1">🤝 Parceiro Mercado Livre</strong>
-                        Comprando através dos nossos links, você garante o melhor preço oficial e apoia o crescimento do projeto.
+                        <strong class="text-teal-900 block mb-1">🤝 Transparência de Afiliado</strong>
+                        Participamos do Programa de Afiliados do Mercado Livre. As compras são processadas diretamente na plataforma oficial e podemos receber comissão pelas indicações.
                     </div>
                 </div>
 
                 <!-- ÁREA DE ANÚNCIO 3: Barra Lateral -->
-                <div class="mt-6">
+                <div class="mt-6" aria-label="Publicidade">
                     <div class="bg-slate-200/60 border border-dashed border-slate-300 rounded-xl p-3 text-center text-xs text-slate-400">
                         [ Anúncio Lateral AdSense ]
                     </div>
@@ -211,10 +306,16 @@
         </aside>
     </main>
 
+    <!-- Rodapé com Aviso Legal e Transparência -->
     <footer class="bg-slate-900 text-slate-400 text-center py-10 mt-16 text-xs border-t border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 space-y-2">
-            <p class="font-bold text-slate-300 text-sm">🐾 Pet Ponto — Achadinhos, Cuidados e Ciência Veterinária</p>
-            <p>© 2026 Todos os direitos reservados. Participa do programa de Afiliados do Mercado Livre.</p>
+        <div class="max-w-4xl mx-auto px-4 space-y-3">
+            <p class="font-bold text-slate-200 text-sm">🐾 Pet Ponto — Achadinhos, Cuidados e Bem-Estar Animal</p>
+            <p class="text-slate-400 leading-relaxed">
+                <strong>Transparência:</strong> O Pet Ponto participa do Programa de Afiliados do Mercado Livre. Isso significa que podemos receber comissões por compras qualificadas realizadas através dos links deste site, sem acréscimo no valor final para o comprador. Preços e disponibilidade estão sujeitos a alterações na loja oficial.
+            </p>
+            <p class="text-slate-500 text-[11px]">
+                As informações publicadas possuem finalidade educativa e não substituem o acompanhamento médico-veterinário profissional. © 2026 Pet Ponto. Todos os direitos reservados.
+            </p>
         </div>
     </footer>
 
@@ -226,7 +327,7 @@
                 nome: "Moletom Pet com Capuz e Punhos Rosa",
                 categoria: "Conforto",
                 selo: "Destaque no Shorts",
-                descricao: "Tecido levezinho e super macio. Protege o pet do vento e do chão frio sem incomodar ou prender os movimentos.",
+                descricao: "Tecido leve e macio para dias mais frescos. Ajuda a aquecer o pet em ambientes frios com modelagem pensada para o conforto durante os movimentos.",
                 linkML: "https://meli.la/1kD6kp9"
             },
             {
@@ -234,7 +335,7 @@
                 nome: "Dispenser Hermético 2,5L com Copo Medidor",
                 categoria: "Alimentação",
                 selo: "Mais Prático",
-                descricao: "Adeus sacos rasgados e ração murcha! Possui travas de pressão contra humidade e tampa 2 em 1 que serve como copo medidor.",
+                descricao: "Organização prática para a rotina! Conta com travas de vedação que ajudam a conservar a ração protegida da umidade e tampa 2 em 1 que funciona como copo medidor.",
                 linkML: "https://meli.la/1n8hAvV"
             },
             {
@@ -242,7 +343,7 @@
                 nome: "Jornal Higiênico All Papers Pet Absorvente",
                 categoria: "Higiene",
                 selo: "Campeão de Vendas",
-                descricao: "Papel absorvente ecológico e seguro. Absorve o xixi rapidamente e neutraliza odores sem soltar tinta que mancha as patas.",
+                descricao: "Papel absorvente desenvolvido para a higiene pet. Auxilia na absorção rápida de líquidos e no controle de odores, sem tinta de jornal comum que suja as patas.",
                 linkML: "https://meli.la/1qmXoEa"
             },
             {
@@ -250,7 +351,7 @@
                 nome: "Kit 15 Sachês Friskies Gato Adulto Carne 85g",
                 categoria: "Alimentação",
                 selo: "Mais Vendido",
-                descricao: "Alimento húmedo premium especial para gatos. Kit com 15 unidades sabor carne ao molho para garantir hidratação e sabor.",
+                descricao: "Alimento úmido para gatos adultos. Kit prático com 15 unidades sabor carne ao molho, ideal para variar o cardápio e auxiliar na ingestão diária de líquidos.",
                 linkML: "https://meli.la/2dw66TS"
             },
             {
@@ -258,29 +359,113 @@
                 nome: "Ração Fórmula Natural Pro Cães Adultos Médio/Grande - Frango e Batata-Doce",
                 categoria: "Alimentação",
                 selo: "Super Premium",
-                descricao: "Alimento completo super premium sem ingredientes transgénicos e com antioxidantes naturais. Sabor delicioso de frango com batata-doce.",
+                descricao: "Alimento completo de linha super premium formulado sem ingredientes transgênicos e com antioxidantes naturais, no sabor frango com batata-doce.",
                 linkML: "https://meli.la/18w3mrG"
             }
         ];
 
         let categoriaAtual = 'todos';
 
+        // Remove acentos e padroniza para minúsculas (ex: "Ração" -> "racao")
+        function normalizarTexto(texto) {
+            return (texto || '')
+                .toString()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase()
+                .trim();
+        }
+
+        // Rastreamento preparado para cliques nos links afiliados (GA4 / GTM / Console)
+        function rastrearCliqueAfiliado(evento, idProduto) {
+            const produto = meusProdutos.find(p => p.id === idProduto);
+            if (!produto) return;
+
+            const payload = {
+                event: 'affiliate_click',
+                product_id: produto.id,
+                product_name: produto.nome,
+                product_category: produto.categoria,
+                product_badge: produto.selo,
+                affiliate_url: produto.linkML,
+                affiliate_platform: 'Mercado Livre',
+                timestamp: new Date().toISOString()
+            };
+
+            // Integração automática caso Google Analytics (gtag) esteja presente
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'select_promotion', {
+                    promotion_id: String(produto.id),
+                    promotion_name: produto.nome,
+                    creative_name: produto.selo,
+                    creative_slot: produto.categoria,
+                    location_id: produto.linkML
+                });
+            }
+
+            // Integração automática caso Google Tag Manager (dataLayer) esteja presente
+            if (Array.isArray(window.dataLayer)) {
+                window.dataLayer.push(payload);
+            }
+
+            // Dispara um CustomEvent no navegador para qualquer script futuro de analytics
+            window.dispatchEvent(new CustomEvent('petponto:affiliate_click', { detail: payload }));
+        }
+
         function renderizarProdutos(lista) {
             const grade = document.getElementById('gradeProdutos');
+            const contador = document.getElementById('contadorResultados');
+
+            // Atualiza contador de resultados
+            if (lista.length === meusProdutos.length && categoriaAtual === 'todos' && !document.getElementById('buscaInput').value.trim()) {
+                contador.textContent = `Exibindo todos os ${lista.length} produtos selecionados`;
+            } else {
+                contador.textContent = `${lista.length} ${lista.length === 1 ? 'produto encontrado' : 'produtos encontrados'}`;
+            }
+
+            // Estado vazio caso nenhum produto corresponda à busca/filtro
+            if (lista.length === 0) {
+                grade.innerHTML = `
+                    <div class="col-span-full bg-white rounded-2xl border border-slate-200/80 p-10 text-center max-w-md mx-auto my-4 shadow-sm">
+                        <span class="text-4xl block mb-3" aria-hidden="true">🔍🐾</span>
+                        <h3 class="font-bold text-slate-900 text-lg mb-1">Nenhum produto encontrado</h3>
+                        <p class="text-xs text-slate-600 mb-5 leading-relaxed">
+                            Não encontramos itens para o termo ou filtro selecionado. Tente buscar por outra palavra ou limpe os filtros.
+                        </p>
+                        <button type="button" onclick="limparBuscaEFiltros()" class="bg-teal-700 hover:bg-teal-800 text-white font-bold text-xs px-5 py-3 rounded-xl transition shadow-sm">
+                            Limpar busca e ver todos
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
             grade.innerHTML = lista.map(p => `
-                <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition duration-300 p-6 flex flex-col justify-between group">
+                <article class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition duration-300 p-6 flex flex-col justify-between group">
                     <div>
-                        <div class="flex justify-between items-center mb-3">
+                        <div class="flex justify-between items-center mb-3 gap-2">
                             <span class="bg-orange-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">${p.selo}</span>
                             <span class="text-[11px] font-semibold text-teal-700 uppercase">${p.categoria}</span>
                         </div>
                         <h3 class="font-bold text-slate-900 text-lg mb-2 group-hover:text-teal-700 transition">${p.nome}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed mb-6">${p.descricao}</p>
                     </div>
-                    <a href="${p.linkML}" target="_blank" rel="noopener" class="block w-full text-center bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold text-xs py-3.5 rounded-xl transition shadow-sm shadow-yellow-400/20">
-                        Ver Oferta no Mercado Livre ➔
-                    </a>
-                </div>
+                    <div>
+                        <a href="${p.linkML}"
+                           target="_blank"
+                           rel="noopener noreferrer sponsored"
+                           onclick="rastrearCliqueAfiliado(event, ${p.id})"
+                           data-affiliate-link="true"
+                           data-product-id="${p.id}"
+                           data-product-name="${p.nome.replace(/"/g, '&quot;')}"
+                           data-product-category="${p.categoria}"
+                           aria-label="Ver oferta de ${p.nome.replace(/"/g, '&quot;')} no Mercado Livre (abre em nova aba)"
+                           class="block w-full text-center bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold text-xs py-3.5 rounded-xl transition shadow-sm shadow-yellow-400/20 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            Ver Oferta no Mercado Livre ➔
+                        </a>
+                        <span class="block text-center text-[10px] text-slate-400 mt-2">Link de afiliado • Mercado Livre</span>
+                    </div>
+                </article>
             `).join('');
         }
 
@@ -289,23 +474,114 @@
             document.querySelectorAll('.tab-btn').forEach(b => {
                 b.classList.remove('tab-active');
                 b.classList.add('bg-white', 'text-slate-600', 'hover:bg-slate-100');
+                b.setAttribute('aria-pressed', 'false');
             });
             btn.classList.add('tab-active');
             btn.classList.remove('bg-white', 'text-slate-600', 'hover:bg-slate-100');
+            btn.setAttribute('aria-pressed', 'true');
             filtrarProdutos();
         }
 
-        function filtrarProdutos() {
-            const termo = document.getElementById('buscaInput').value.toLowerCase();
-            const filtrados = meusProdutos.filter(p => {
-                const bateCategoria = categoriaAtual === 'todos' || p.categoria === categoriaAtual;
-                const bateBusca = p.nome.toLowerCase().includes(termo) || p.descricao.toLowerCase().includes(termo);
-                return bateCategoria && bateBusca;
-            });
-            renderizarProdutos(filtrados);
+        function ordenarLista(lista, criterio) {
+            const copia = [...lista];
+            if (criterio === 'az') {
+                return copia.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+            }
+            if (criterio === 'za') {
+                return copia.sort((a, b) => b.nome.localeCompare(a.nome, 'pt-BR'));
+            }
+            if (criterio === 'categoria') {
+                return copia.sort((a, b) => a.categoria.localeCompare(b.categoria, 'pt-BR') || a.nome.localeCompare(b.nome, 'pt-BR'));
+            }
+            return copia.sort((a, b) => a.id - b.id);
         }
 
-        renderizarProdutos(meusProdutos);
+        function filtrarProdutos() {
+            const inputBusca = document.getElementById('buscaInput');
+            const termoNormalizado = normalizarTexto(inputBusca.value);
+            const criterioOrdenacao = document.getElementById('ordenarSelect').value;
+
+            // Mostra ou esconde o botão "X" dentro do campo de busca
+            const btnLimparInput = document.getElementById('btnLimparInput');
+            if (inputBusca.value.trim().length > 0) {
+                btnLimparInput.classList.remove('hidden');
+            } else {
+                btnLimparInput.classList.add('hidden');
+            }
+
+            // Mostra ou esconde o botão geral "Limpar busca e filtros"
+            const btnLimparFiltros = document.getElementById('btnLimparFiltros');
+            const temFiltroAtivo = termoNormalizado.length > 0 || categoriaAtual !== 'todos' || criterioOrdenacao !== 'destaques';
+            if (temFiltroAtivo) {
+                btnLimparFiltros.classList.remove('hidden');
+            } else {
+                btnLimparFiltros.classList.add('hidden');
+            }
+
+            const filtrados = meusProdutos.filter(p => {
+                const bateCategoria = categoriaAtual === 'todos' || p.categoria === categoriaAtual;
+                const textoProduto = normalizarTexto(`${p.nome} ${p.descricao} ${p.categoria} ${p.selo}`);
+                const bateBusca = !termoNormalizado || textoProduto.includes(termoNormalizado);
+                return bateCategoria && bateBusca;
+            });
+
+            const ordenados = ordenarLista(filtrados, criterioOrdenacao);
+            renderizarProdutos(ordenados);
+        }
+
+        function limparApenasTextoBusca() {
+            const inputBusca = document.getElementById('buscaInput');
+            inputBusca.value = '';
+            inputBusca.focus();
+            filtrarProdutos();
+        }
+
+        function limparBuscaEFiltros() {
+            document.getElementById('buscaInput').value = '';
+            document.getElementById('ordenarSelect').value = 'destaques';
+            const btnTodos = document.querySelector('.tab-btn[data-categoria="todos"]');
+            if (btnTodos) {
+                filtrarCategoria('todos', btnTodos);
+            } else {
+                categoriaAtual = 'todos';
+                filtrarProdutos();
+            }
+        }
+
+        // Controle do Menu Responsivo Mobile
+        function alternarMenuMobile() {
+            const menu = document.getElementById('menuMobile');
+            const btn = document.getElementById('menuMobileBtn');
+            const iconeAbrir = document.getElementById('iconeMenuAbrir');
+            const iconeFechar = document.getElementById('iconeMenuFechar');
+
+            const estaAberto = !menu.classList.contains('hidden');
+            if (estaAberto) {
+                fecharMenuMobile();
+            } else {
+                menu.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+                btn.setAttribute('aria-label', 'Fechar menu de navegação');
+                iconeAbrir.classList.add('hidden');
+                iconeFechar.classList.remove('hidden');
+            }
+        }
+
+        function fecharMenuMobile() {
+            const menu = document.getElementById('menuMobile');
+            const btn = document.getElementById('menuMobileBtn');
+            const iconeAbrir = document.getElementById('iconeMenuAbrir');
+            const iconeFechar = document.getElementById('iconeMenuFechar');
+
+            menu.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+            btn.setAttribute('aria-label', 'Abrir menu de navegação');
+            iconeAbrir.classList.remove('hidden');
+            iconeFechar.classList.add('hidden');
+        }
+
+        // Inicialização
+        filtrarProdutos();
     </script>
 </body>
 </html>
